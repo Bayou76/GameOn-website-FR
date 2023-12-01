@@ -127,12 +127,14 @@ function locationValidated() {
     if (locationCheckbox[i].checked) {
       locationError.textContent = " Champ valide";
       locationError.style.fontSize = "15px";
+      locationError.style.color = "green";
       return true;
     }
   }
 
   locationError.textContent = " Veuillez indiquer la ville du tournois";
   locationError.style.fontSize = "15px";
+  locationError.style.color = "red";
   return false
 }
 
