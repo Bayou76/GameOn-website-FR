@@ -21,14 +21,18 @@ const checkboxConditionError = document.getElementById("checkboxConditionError")
 function firstNameValidated() {
   if (/^([A-Za-z]{2,20})?([-]{0,1})?([A-Za-z]{2,20})$/.test(firstName.value)) {
     firstName.style.border = "solid 2px green";
+    firstName.style.backgroundColor = "white";
+    firstName.style.color = "black";
     firstNameError.textContent = "Champ Valide";
     firstNameError.style.color = "green";
     firstNameError.style.fontSize = "15px";
     return true;
   } else {
     firstName.style.border = "solid 2px red";
+    firstName.style.backgroundColor = "darkred";
+    firstName.style.color = "white";
     firstNameError.textContent =
-      "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
+      "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
     firstNameError.style.color = "red";
     firstNameError.style.fontSize = "12px";
     return false;
@@ -42,12 +46,16 @@ firstName.addEventListener("change", () => {
 function lastNameValidated() {
   if (/^([A-Za-z]{2,20})?([-]{0,1})?([A-Za-z]{2,20})$/.test(lastName.value)) {
     lastName.style.border = "solid 2px green";
+    lastName.style.backgroundColor = "white";
+    lastName.style.color = "black";
     lastNameError.textContent = "Champ Valide";
     lastNameError.style.color = "green";
     lastNameError.style.fontSize = "15px";
     return true;
   } else {
     lastName.style.border = "solid 2px red";
+    lastName.style.backgroundColor = "darkred";
+    lastName.style.color = "white";
     lastNameError.textContent =
       "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
     lastNameError.style.color = "red";
@@ -67,12 +75,16 @@ function emailValidated() {
     )
   ) {
     email.style.border = "solid 2px green";
+    email.style.backgroundColor = "white";
+    email.style.color = "black";
     emailError.textContent = "Champ Valide";
     emailError.style.fontSize = "15px";
     emailError.style.color = "green";
     return true;
   } else {
     email.style.border = "solid 2px red";
+    email.style.backgroundColor = "darkred";
+    email.style.color = "white";
     emailError.textContent = "Veuillez rentrer une adresse email valide";
     emailError.style.fontSize = "15px";
     emailError.style.color = "red";
@@ -90,12 +102,16 @@ function birthdateValidated() {
     /^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$/.test(birthdate.value)
   ) {
     birthdate.style.border = "solid 2px green";
+    birthdate.style.backgroundColor = "white";
+    birthdate.style.color = "black";
     birthdateError.textContent = "Champ Valide";
     birthdateError.style.fontSize = "15px";
     birthdateError.style.color = "green";
     return true;
   } else {
     birthdate.style.border = "solid 2px red";
+    birthdate.style.backgroundColor = "darkred";
+    birthdate.style.color = "white";
     birthdateError.textContent = "Vous devez entrer votre date de naissance.";
     birthdateError.style.fontSize = "15px";
     birthdateError.style.color = "red";
@@ -111,9 +127,16 @@ birthdate.addEventListener("change", () => {
 function quantityValidated() {
   if (quantity.value >= 0 && /^[0-9]/.test(quantity.value)) {
     quantity.style.border = "solid 2px green";
+    quantity.style.backgroundColor = "white";
+    quantity.style.color = "black";
+    quantityError.textContent = "Champ Valide";
     return true;
   } else {
     quantity.style.border = "solid 2px red";
+    quantity.style.backgroundColor = "darkred";
+    quantity.style.color = "white";
+    quantityError.style.fontSize = "15px";
+    quantityError.textContent = "Vous devez entrer un nombre : 0 ou plus.";
   }
 }
 quantity.addEventListener("change", () => {
@@ -149,10 +172,12 @@ function checkboxValidated() {
   if(checkboxCondition.checked){
     checkboxConditionError.textContent = "champ valide";
     checkboxConditionError.style.fontSize = "15px";
+    checkboxConditionError.style.color ="green";
     return true;
   }
   else {
     checkboxConditionError.textContent =" Merci d'accepter les conditions d'utilisations " ;
+    checkboxConditionError.style.color ="red";
     return false;
   }
 }

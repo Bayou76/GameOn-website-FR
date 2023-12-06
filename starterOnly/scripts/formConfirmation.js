@@ -4,18 +4,23 @@ const btnSend = document.querySelector(".btn-submit");
 const modalConfirmation = document.querySelector(".modalConfirmation");
 const form = document.querySelector("form");
 const messageError  = document.getElementById("messageError");
+const btnCloseConfirm = document.querySelector(".btnClose")
 
 // afficher le message de confirmation
 
 btnSend.addEventListener('click', e => {
     e.preventDefault();
 
-    if(firstNameValidated() && lastNameValidated() &&  emailValidated() && birthdateValidated() && quantityValidated && locationValidated() && checkboxValidated ){
+    if(firstNameValidated() && lastNameValidated() &&  emailValidated() && birthdateValidated() && quantityValidated() && locationValidated() && checkboxValidated() ){
         modalConfirmation.style.display = "block"
         form.style.display = "none";
     } else {
         messageError.textContent = " Merci de bien remplir  inscription";
         messageError.style.fontSize = "15px";
+        messageError.style.color = "red";
     }
 })
 
+btnCloseConfirm.addEventListener("click", () => {
+    window.location.reload();
+});
