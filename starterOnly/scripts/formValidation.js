@@ -126,15 +126,12 @@ birthdate.addEventListener("change", () => {
 
 function quantityValidated() {
   if (quantity.value >= 0 && /^[0-9]/.test(quantity.value)) {
-    quantity.style.border = "solid 2px green";
-    quantity.style.backgroundColor = "white";
-    quantity.style.color = "black";
+    quantityError.style.color = "green";
     quantityError.textContent = "Champ Valide";
+    quantityError.style.fontSize = "15px";
     return true;
   } else {
-    quantity.style.border = "solid 2px red";
-    quantity.style.backgroundColor = "darkred";
-    quantity.style.color = "white";
+    quantityError.style.color = "darkred";
     quantityError.style.fontSize = "15px";
     quantityError.textContent = "Vous devez entrer un nombre : 0 ou plus.";
   }
@@ -178,6 +175,7 @@ function checkboxValidated() {
   else {
     checkboxConditionError.textContent =" Merci d'accepter les conditions d'utilisations " ;
     checkboxConditionError.style.color ="red";
+    checkboxConditionError.style.fontSize = "15px";
     return false;
   }
 }
